@@ -1,6 +1,6 @@
 import loginPage from '../support/pages/loginPage'
 
-describe('Login Test', () => {
+describe('Teste de login', () => {
   it('Deve fazer login com sucesso', () => {
     cy.fixture('users').then((users) => {
       loginPage.visit()

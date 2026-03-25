@@ -1,6 +1,6 @@
 describe('API Tests', () => {
 
-  it('should create user via API', () => {
+  it('Deve criar usuário via API', () => {
     cy.request({
       method: 'POST',
       url: 'https://reqres.in/api/users',

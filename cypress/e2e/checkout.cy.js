@@ -6,9 +6,9 @@ import checkoutPage from '../support/pages/checkoutPage'
 import { createUser } from '../support/utils/dataFactory'
 import { validateUser } from '../support/utils/validators'
 
-describe('Checkout Flow', () => {
+describe('Fluxo de check-out', () => {
 
-  it('should complete checkout with valid user data', () => {
+  it('Deve concluir o processo de finalização da compra com dados de usuário válidos', () => {
 
     // 🔥 1. Cria usuário dinâmico
     const user = createUser()
