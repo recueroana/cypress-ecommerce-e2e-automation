@@ -1,0 +1,27 @@
+{
+  "name": "cypress-ecommerce-e2e-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run report:clean && cypress run --reporter mochawesome",
+    "test:open": "cypress open",
+    "test:headless": "npm run report:clean && cypress run --headless --reporter mochawesome",
+    "report:clean": "rmdir /s /q cypress\\reports 2>nul || echo 'Relatórios limpos'",
+    "report:merge": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json && npx marge cypress/reports/report.json --reportDir cypress/reports --reportTitle \"Relatório Consolidado\"",
+    "test:report": "npm run test:headless && npm run report:merge"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^15.13.0",
+    "faker": "^6.6.6",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.4.0"
+  }
+}
