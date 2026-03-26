@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run report:clean && cypress run --reporter mochawesome",
-    "test:open": "cypress open",
-    "test:headless": "npm run report:clean && cypress run --headless --reporter mochawesome",
+    "test": "npm run report:clean && npx cypress run --reporter mochawesome",
+    "test:open": "npx cypress open",
+    "test:headless": "npm run report:clean && npx cypress run --headless --reporter mochawesome",
+    "test:performance": "npm run report:clean && npx cypress run --headless --reporter mochawesome --spec \"cypress/e2e/performance.cy.js\"",
+    "test:security": "npm run report:clean && npx cypress run --headless --reporter mochawesome --spec \"cypress/e2e/security.cy.js\"",
     "report:clean": "rmdir /s /q cypress\\reports 2>nul || echo 'Relatórios limpos'",
     "report:merge": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json && npx marge cypress/reports/report.json --reportDir cypress/reports --reportTitle \"Relatório Consolidado\"",
     "test:report": "npm run test:headless && npm run report:merge"
